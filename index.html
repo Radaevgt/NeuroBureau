@@ -216,10 +216,9 @@
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 800;
-            display: block;
-            margin-bottom: 0.3rem;
+            line-height: 1;
         }
 
         .stat-label {
@@ -398,12 +397,7 @@
             border-color: var(--accent);
         }
 
-        .service-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--bg-light);
-            margin-bottom: 1rem;
-        }
+
 
         .service-card h3 {
             font-size: 1.6rem;
@@ -431,8 +425,8 @@
         }
 
         .service-features li::before {
-            content: '✓';
-            color: var(--success);
+            content: '•';
+            color: var(--accent);
             font-weight: 700;
             font-size: 1.2rem;
         }
@@ -453,17 +447,20 @@
 
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            justify-items: center;
         }
 
         .tech-card {
             background: white;
-            padding: 2.5rem;
+            padding: 2rem 1.5rem;
             border-radius: 16px;
             text-align: center;
             box-shadow: 0 3px 20px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
+            max-width: 280px;
+            width: 100%;
         }
 
         .tech-card:hover {
@@ -472,15 +469,15 @@
         }
 
         .tech-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, var(--accent), var(--primary));
-            border-radius: 20px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2.5rem;
+            margin: 0 auto 1.2rem;
+            font-size: 2rem;
             color: white;
         }
 
@@ -645,8 +642,8 @@
         .process-step {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
+            gap: 3rem;
+            margin-bottom: 3rem;
             position: relative;
         }
 
@@ -678,7 +675,7 @@
 
         .step-content {
             background: white;
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 16px;
             box-shadow: 0 5px 25px rgba(0,0,0,0.08);
         }
@@ -1017,7 +1014,7 @@
         footer {
             background: var(--primary);
             color: white;
-            padding: 80px 5% 30px;
+            padding: 60px 5% 30px;
         }
 
         .footer-container {
@@ -1028,8 +1025,8 @@
         .footer-content {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 3rem;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .footer-brand h3 {
@@ -1151,6 +1148,14 @@
                 flex-direction: column;
                 gap: 1.5rem;
             }
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .stat-item > div {
+                justify-content: flex-start !important;
+            }
 
             section {
                 padding: 60px 5%;
@@ -1242,18 +1247,33 @@
                 <h1>AI-разработка<br>нового поколения</h1>
                 <p class="hero-tagline">Создаем интеллектуальные решения для автоматизации бизнеса. Telegram-боты, AI-агенты и комплексные системы с использованием передовых технологий.</p>
                 
-                <div class="hero-stats">
+                <div class="hero-stats" style="align-items: center;">
                     <div class="stat-item">
-                        <span class="stat-number">2-3</span>
-                        <span class="stat-label">дня на MVP</span>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 2.5rem;">⚡</span>
+                            <div>
+                                <span class="stat-number" style="display: block; font-size: 2rem;">2-3</span>
+                                <span class="stat-label">дня на MVP</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">проектов</span>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 2.5rem;">🚀</span>
+                            <div>
+                                <span class="stat-number" style="display: block; font-size: 2rem;">50+</span>
+                                <span class="stat-label">проектов</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">98%</span>
-                        <span class="stat-label">довольных клиентов</span>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 2.5rem;">⭐</span>
+                            <div>
+                                <span class="stat-number" style="display: block; font-size: 2rem;">98%</span>
+                                <span class="stat-label">довольных клиентов</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -1291,7 +1311,7 @@
 
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-number">01</div>
+                    
                     <h3>Telegram-боты</h3>
                     <p>Разработка интеллектуальных ботов для автоматизации коммуникации с клиентами, приема заказов и управления бизнес-процессами.</p>
                     <ul class="service-features">
@@ -1305,7 +1325,7 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-number">02</div>
+                    
                     <h3>Telegram Mini Apps</h3>
                     <p>Полноценные веб-приложения внутри Telegram с нативным интерфейсом и расширенным функционалом.</p>
                     <ul class="service-features">
@@ -1319,7 +1339,7 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-number">03</div>
+                    
                     <h3>AI-агенты</h3>
                     <p>Интеллектуальные помощники на базе GPT-4 и других LLM для автоматизации рутинных задач и обработки данных.</p>
                     <ul class="service-features">
@@ -1333,7 +1353,7 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-number">04</div>
+                    
                     <h3>Веб-разработка</h3>
                     <p>Современные сайты и веб-приложения с интеграцией AI-функционала и адаптивным дизайном.</p>
                     <ul class="service-features">
@@ -1347,7 +1367,7 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-number">05</div>
+                    
                     <h3>API разработка</h3>
                     <p>Создание надежных RESTful API для интеграции различных систем и сервисов.</p>
                     <ul class="service-features">
@@ -1361,7 +1381,7 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-number">06</div>
+                    
                     <h3>Техподдержка</h3>
                     <p>Полное сопровождение проектов: обновления, оптимизация, расширение функционала.</p>
                     <ul class="service-features">
@@ -1437,7 +1457,9 @@
 
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">💎</div>
+                    <div class="project-image" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.9), rgba(74, 144, 184, 0.9));">
+                        <div style="font-size: 3rem;">💎</div>
+                    </div>
                     <div class="project-content">
                         <span class="project-tag">Telegram Mini App</span>
                         <h3>BeautyBook</h3>
@@ -1457,7 +1479,9 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-image">🤖</div>
+                    <div class="project-image" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.9), rgba(74, 144, 184, 0.9));">
+                        <div style="font-size: 3rem;">🤖</div>
+                    </div>
                     <div class="project-content">
                         <span class="project-tag">AI Agent</span>
                         <h3>ИИ Агент RECEIPTS</h3>
@@ -1551,7 +1575,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Команда</span>
-                <h2 class="section-title">Со-основатели студии</h2>
+                <h2 class="section-title">Основатели</h2>
                 <p class="section-description">Эксперты в AI-разработке с многолетним опытом создания инновационных решений</p>
             </div>
 
@@ -1761,8 +1785,8 @@
     <section class="cta-section" id="contact">
         <div class="cta-content">
             <h2>Готовы начать проект?</h2>
-            <p>Свяжитесь с нами для бесплатной консультации. Обсудим вашу задачу и предложим оптимальное решение.</p>
-            <div class="hero-buttons">
+            <p style="margin-bottom: 2rem;">Свяжитесь с нами для бесплатной консультации.<br>Обсудим вашу задачу и предложим оптимальное решение.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
                 <a href="https://t.me/neurobureau" target="_blank" class="btn btn-primary">Написать в Telegram</a>
                 <a href="mailto:info@neurobureau.ru" class="btn btn-outline">Отправить email</a>
             </div>
